@@ -23,6 +23,9 @@ Things you may want to cover:
 
 * ...
 
+In order to use this app you must create a new `application.yml` do this by running `$ rails g figaro:install`
+You will then have to add your own amazon s3 account id.
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

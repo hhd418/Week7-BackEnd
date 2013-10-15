@@ -4,3 +4,7 @@
   no attachment available
 -else
   %iframe{height: "800", width:"100%", frameBorder: "0", src: @post.attachment_url(:medium)}
+- if @post.file_attachment.blank?
+  no attachment available
+-else
+  %iframe{height: "800", width:"100%", frameBorder: "0", src: @post.file_attachment_url}

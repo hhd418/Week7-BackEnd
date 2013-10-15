@@ -5,7 +5,10 @@
 
       = f.text_area :message, placeholder: "Type your message...", rows: 15
       %br
-      = f.file_field :attachment, placeholder: "Paste your attachment..."
+      Image Upload:
+      = f.file_field :attachment
+      PDF Upload:
+      = f.file_field :file_attachment
 
       = f.hidden_field :project_id, value: @project.id
       = f.hidden_field :phase_id, value: params[:phase]

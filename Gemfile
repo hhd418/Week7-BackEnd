@@ -41,6 +41,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'figaro'
+gem 'fog', "~> 1.3.1"
+gem 'font-awesome-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

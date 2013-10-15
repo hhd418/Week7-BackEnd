@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   default_scope order('created_at DESC')
   before_save :set_defaults
   mount_uploader :attachment, ImageUploader
+  mount_uploader :file_attachment, FileUploader
 
   private
 

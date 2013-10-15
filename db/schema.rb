@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013212548) do
+ActiveRecord::Schema.define(version: 20131015200157) do
 
   create_table "phases", force: true do |t|
     t.string   "name"
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20131013212548) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "message"
-    t.text     "attachment", limit: 255
+    t.text     "attachment",      limit: 255
     t.integer  "phase_id"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "file_attachment"
   end
 
   add_index "posts", ["phase_id"], name: "index_posts_on_phase_id"
