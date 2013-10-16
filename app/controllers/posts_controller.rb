@@ -28,7 +28,9 @@ class PostsController < ApplicationController
     @post.phase_id = Phase.find_by_name(params[:post][:phase_id]).id
 
     if @post.save
-      Notifier.post_notification(@post).deliver
+      @post.project.users.each do |user|
+        Notifier.post_notification(user, @post).deliver
+      end
     end
     respond_to do |format|
       if @post.save

@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default from: "bn  @gmail.com"
+  default from: "daniel.gamble.mcadam@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -15,10 +15,9 @@ class Notifier < ActionMailer::Base
         subject: "Subscribed to #{project.name.capitalize} | Ativa")
   end
 
-  def post_notification(post)
-    post.project.users.each do |user|
+  def post_notification(user, post)
+    @user = user
       mail( to:"#{user.name} <#{user.email}>",
-            subject: "A new post in #{project.name.capitalize} has been written."  )
-    end
+            subject: "A new post in #{post.project.name.capitalize} has been written."  )
   end
 end
