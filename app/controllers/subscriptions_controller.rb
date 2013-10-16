@@ -5,6 +5,10 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = current_user.subscriptions.build(project_id: params[:project_id])
 
+    if @subscription.save
+      Notifier.subscription_confirmation(current_user, @project).deliver
+    end
+
     respond_to do |format|
       if @subscription.save
         format.html { redirect_to project_path(@project.id), notice: 'You are now subscribed to this project.' }

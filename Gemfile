@@ -9,14 +9,15 @@ gem 'pry'
 gem 'rails', '4.0.0'
 
 gem 'carrierwave'
-
-gem 'rmagick'
+# Removed due to installation issues
+# will need for attachments
+# gem 'rmagick'
 
 gem 'pry'
 
 gem "fog", "~> 1.3.1"
 
-group :development do 
+group :development do
 	gem 'figaro'
 end
 
