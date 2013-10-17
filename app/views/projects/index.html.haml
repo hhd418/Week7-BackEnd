@@ -2,6 +2,11 @@
   Active Projects
   %small= link_to 'New Project', new_project_path
 
+%h1 New project
+= render 'form'
+= link_to 'Back', projects_path
+
+
 .row
   .large-9.large-centered.columns
     %table
